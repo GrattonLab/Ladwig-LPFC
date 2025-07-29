@@ -1,4 +1,4 @@
-This repository contains MATLAB scripts used to conduct analyses from Ladwig et al., 2025, X, a study of the organizational features of Lateral Prefrontal Cortex (LPFC) Organization present using precision fMRI. 
+This repository contains MATLAB scripts used to conduct analyses from Ladwig et al., 2025, Precision fMRI reveals densely interdigitated network patches with conserved motifs in the lateral prefrontal cortex.
 
 Data: Data from 10 highly sampled individuals will be made publicly available at Open Neuro upon publication.
 
