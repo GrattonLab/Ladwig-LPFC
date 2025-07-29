@@ -1,0 +1,11 @@
+task,block,condition1,condition2,timing_col,trials_per_block,blocktype_col
+tomfalse,15,bel,pic,1,1,1
+tompain,15,emo,phy,1,1,1
+langlocaud,18,int,deg,1,1,1
+langlocvis,18,sen,non,1,1,1
+spatialwm,34,hard,easy,9,4,1
+verbalwm,34,hard,easy,10,4,1
+msit,42,hard,easy,11,24,2
+vmsit,42,hard,easy,11,24,2
+stroop,18,hard,easy,12,12,1
+arithmetic,18,hard,easy,11,4,1

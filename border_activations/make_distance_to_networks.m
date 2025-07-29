@@ -1,0 +1,89 @@
+% per subject 
+clear all;
+%subjects = {'HUBS01', 'HUBS02', 'HUBS03', 'HUBS04', 'HUBS05', 'HUBS06', 'HUBS07', 'HUBS08','HUBS09', 'HUBS10'};
+subjects = {'HUBS05', 'HUBS06', 'HUBS07', 'HUBS08','HUBS09', 'HUBS10'};
+
+template = ft_read_cifti_mod('/projects/b1081/Atlases/cifti_template_cortexonly.dtseries.nii');
+for s =1:length(subjects)
+    subject = subjects{s};
+    disp(subject);
+    network_path = ['/projects/b1081/NSF_HUBS/Nifti/derivatives/RestStats_CIFTI_2320/sub-' subject '/pfm/'];
+    
+    sub_dmat = load([network_path 'DistanceMatrixCortexOnly.mat']);
+    
+    % load the networks 
+    network_struct = ft_read_cifti_mod([network_path 'Bipartite_PhysicalCommunities+FinalLabeling.dlabel.nii']);
+    networks = network_struct.data(1:59412,1);
+    unique_net = unique(networks);
+    % for each of the vertices find the minimum distance to each network 
+    for i =1:size(networks,1)
+        for n=1:length(unique_net)
+            network_idx = find(networks==n);
+            if(isempty(network_idx))
+                min_dist(i,n) = NaN;
+            else
+                min_dist(i,n) = min(sub_dmat.D(i,network_idx));
+            end
+        end
+    end
+    template.data = min_dist;
+    ft_write_cifti_mod([network_path subject '_distance_to_networks.dtseries.nii'],template)
+    clear sub_dmat;
+end
+
+%% per subject but use group distances 
+
+clear all;
+subjects = {'HUBS01', 'HUBS02', 'HUBS03', 'HUBS04', 'HUBS05', 'HUBS06', 'HUBS07', 'HUBS08','HUBS09', 'HUBS10'};
+load('/projects/b1081/Scripts/CIFTI_RELATED/Resources/Conte69_atlas-v2.LR.32k_fs_LR.wb/Cifti_geo_distances_xhemisphere_large_uint8.mat'); % load dmat
+D = distances(1:59412,1:59412);
+template = ft_read_cifti_mod('/projects/b1081/Atlases/cifti_template_cortexonly.dtseries.nii');
+for s =1:length(subjects)
+    subject = subjects{s};
+    disp(subject);
+    network_path = ['/projects/b1081/NSF_HUBS/Nifti/derivatives/RestStats_CIFTI_2320/sub-' subject '/pfm/lynch/'];
+        
+    % load the networks 
+    network_struct = ft_read_cifti_mod([network_path 'Bipartite_PhysicalCommunities+FinalLabeling.dlabel.nii']);
+    networks = network_struct.data(1:59412,1);
+    unique_net = unique(networks);
+    % for each of the vertices find the minimum distance to each network 
+    for i =1:size(networks,1)
+        for n=1:length(unique_net)
+            network_idx = find(networks==n);
+            if(isempty(network_idx))
+                min_dist(i,n) = NaN;
+            else
+                min_dist(i,n) = min(D(i,network_idx));
+            end
+        end
+    end
+    template.data = min_dist;
+    ft_write_cifti_mod([network_path subject '_distance_to_networks_group_dmat.dtseries.nii'],template)
+end
+
+%% make group distance 
+clear all;
+
+template = ft_read_cifti_mod('/projects/b1081/Atlases/cifti_template_cortexonly.dtseries.nii');
+network_path = ['/projects/b1081/NSF_HUBS/resources/lynch_group_prior20.dlabel.nii'];
+load('/projects/b1081/Scripts/CIFTI_RELATED/Resources/Conte69_atlas-v2.LR.32k_fs_LR.wb/Cifti_geo_distances_xhemisphere_large_uint8.mat'); % load dmat
+D = distances(1:59412,1:59412);
+
+network_struct = ft_read_cifti_mod('/projects/b1081/NSF_HUBS/resources/lynch_group_prior20.dlabel.nii');
+networks = network_struct.data(1:59412,1);
+unique_net = unique(networks);   
+
+for i =1:size(networks,1)
+    for n=1:length(unique_net)
+        network_idx = find(networks==n);
+        if(isempty(network_idx))
+            min_dist(i,n) = NaN;
+        else
+            min_dist(i,n) = min(D(i,network_idx));
+        end
+    end
+end
+
+template.data = min_dist;
+ft_write_cifti_mod(['/projects/b1081/NSF_HUBS/resources/lynch_group_distance_to_networks.dtseries.nii'],template)

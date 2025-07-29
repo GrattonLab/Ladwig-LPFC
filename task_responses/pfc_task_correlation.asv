@@ -1,0 +1,198 @@
+% correlation matrix of pfc tasks 
+clear all;
+% get their PFC task responses 
+subjects = {'HUBS01', 'HUBS02', 'HUBS03', 'HUBS04', 'HUBS05', 'HUBS06', 'HUBS07', 'HUBS08', 'HUBS09', 'HUBS10'}; 
+tasks = {'spatialwm', 'verbalwm', 'viswm', 'audwm', 'vmsit', 'msit', 'visattn', 'audattn'};
+all_pfc_task_corr = [];
+pfc_task_data = [];
+outdir='/projects/b1081/NSF_HUBS/images/manuscript/pfc_task_correlation';
+if ~isfolder(outdir), mkdir(outdir); end
+
+for s = 1:length(subjects)
+    subject=subjects{s};
+    disp(subject);
+    for t = 1:length(tasks)
+        task = tasks{t};
+        task_data = ft_read_cifti_mod(['/projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-' subject '/task_summaries/sub-' subject '_' task '_zstats_mean.dscalar.nii']);
+        pfc_mask=ft_read_cifti_mod(['/projects/b1081/NSF_HUBS/resources/group_lpfc_mask.dscalar.nii']); 
+        pfc_idx=pfc_mask.data == 1;
+        %pfc_control_networks_idx = find(pfc_networks.data == 3 | pfc_networks.data == 5 | pfc_networks.data ==9);
+        pfc_task_data(t,s,:)= task_data.data(pfc_idx,size(task_data.data,2));
+        pfc_task_roi(t,s,:) = pfc_task_data(t,s,:) > prctile(pfc_task_data(t,s,:),75);
+        %pfc_task_data(t,:)= task_data.data(pfc_control_networks_idx,size(task_data.data,2));
+
+    end
+end
+%%
+nMaps = length(subjects)*length(tasks);
+pfc_task_roi_flat = reshape(pfc_task_roi,[nMaps, 9334]);
+for i = 1:nMaps
+    for j = i:nMaps
+        d(i,j) = dice(pfc_task_roi_flat(i, :), pfc_task_roi_flat(j, :));
+        d(j,i) = d(i,j);
+%         dice_mat(i, j) = d;
+%         dice_mat(j, i) = d;  % symmetric
+    end
+end
+%%
+d(eye(size(d)) == 1) = NaN;
+imagesc(d);
+colormap('parula');
+%colormap(better_jet_colormap_diff); % Apply the 'parula' colormap
+colorbar; % Add a colorbar for reference
+axis equal; % Equal scaling for axes
+axis tight; % Fit the plot to the data
+% Remove axis labels (equivalent to hiding them in heatmap)
+set(gca, 'XTick', [], 'YTick', []);
+caxis([0.3 0.6]);  % Set color limits
+for i = size(pfc_task_data,1):size(pfc_task_data,1):size(d, 1)-1
+    % Horizontal line at row i
+    hline_new(i+0.5, 'k', 1);  % Horizontal gridlines in black, dotted line, linewidth = 1
+    % Vertical line at column i
+    vline_new(i+0.5, 'k', 1);  % Vertical gridlines in black, dotted line, linewidth = 1
+end
+
+if ~isfolder(outdir), mkdir(outdir); end
+
+saveas(figure(1),[outdir '/all_subs_all_tasks_dice.jpg'], 'jpg')
+
+%%
+pfc_task_corr = corr(reshape(pfc_task_data,size(pfc_task_data,1)*size(pfc_task_data,2),size(pfc_task_data,3))');
+
+%%
+% Assuming pfc_task_corr is your data matrix
+data = pfc_task_corr;
+data(eye(size(data)) == 1) = NaN; 
+figure(1)
+imagesc(data); % Display data as an image
+colormap('parula');
+%colormap(better_jet_colormap_diff); % Apply the 'parula' colormap
+colorbar; % Add a colorbar for reference
+axis equal; % Equal scaling for axes
+axis tight; % Fit the plot to the data
+% Remove axis labels (equivalent to hiding them in heatmap)
+set(gca, 'XTick', [], 'YTick', []);
+caxis([0 0.7]);  % Set color limits
+
+%for i = 8:8:size(data, 1)
+for i = size(pfc_task_data,1):size(pfc_task_data,1):size(data, 1)-1
+    % Horizontal line at row i
+    hline_new(i+0.5, 'k', 1);  % Horizontal gridlines in black, dotted line, linewidth = 1
+    
+    % Vertical line at column i
+    vline_new(i+0.5, 'k', 1);  % Vertical gridlines in black, dotted line, linewidth = 1
+end
+
+if ~isfolder(outdir), mkdir(outdir); end
+
+saveas(figure(1),[outdir '/all_subs_all_tasks.jpg'], 'jpg')
+
+%%
+h=heatmap(pfc_task_corr);
+
+h.GridVisible = 'off';
+h.XDisplayLabels = nan(size(h.XDisplayData));
+h.YDisplayLabels = nan(size(h.YDisplayData));
+colormap(h,'parula');
+%%
+pfc_task_corr{s} = corr(pfc_task_data');
+all_pfc_task_corr = [all_pfc_task_corr pfc_task_corr{s}];
+sum_task_corr = sum_task_corr + pfc_task_corr{s};
+figure(s);
+h=heatmap(tasks, tasks, pfc_task_corr{s});
+h.title(subject);
+colormap(h,'parula');
+outdir='/projects/b1081/NSF_HUBS/images/pfc_task_corrs';
+    %saveas(figure(s),[outdir '/pfc_controltask_corrs_' subject '.jpg'], 'jpg')
+    %saveas(figure(s),[outdir '/pfc_control_nets_task_corrs_' subject '.jpg'], 'jpg')
+%%end
+
+%%
+% Compute the average matrix
+average_task_corr = sum_task_corr/length(subjects);
+figure(1);
+h=heatmap(tasks, tasks, average_task_corr);
+h.title('Mean across all subjects');
+colormap(h,'parula');
+outdir='/projects/b1081/NSF_HUBS/images/pfc_task_corrs';
+%saveas(figure(1),[outdir '/pfc_task_corrs_mean.jpg'], 'jpg')
+saveas(figure(1),[outdir '/pfc_control_nets_task_corrs_mean.jpg'], 'jpg')
+
+
+%%
+
+% Assuming 'corr_matrix' is your 80x80 correlation matrix
+n_tasks = length(tasks); % Number of tasks per subject
+n_subjects = length(subjects); % Number of subjects
+n_total = n_tasks * n_subjects; % Total size (80x80)
+
+within_subject_corrs = []; % To store within-subject correlations
+between_subject_corrs = []; % To store between-subject correlations
+mean_within_subject_values = [];
+mean_between_subject_values = [];
+
+% Loop over each subject
+for subject = 1:length(subjects)
+    % Identify indices for this subject's tasks
+    start_idx = (subject - 1) * n_tasks + 1;
+    end_idx = subject * n_tasks;
+
+    % Extract within-subject correlations
+    within_subject_block = pfc_task_corr(start_idx:end_idx, start_idx:end_idx);
+    % Remove diagonal entries (self-correlations)
+    within_subject_values = within_subject_block(~eye(n_tasks));
+    mean_within_subject_values(subject) = mean(within_subject_values); 
+    within_subject_corrs = [within_subject_corrs; within_subject_values];
+
+    % Extract between-subject correlations
+    between_subject_values = pfc_task_corr(start_idx:end_idx, :);
+    between_subject_values(:, start_idx:end_idx) = []; % Exclude same subject block
+    mean_between_subject_values(subject) = mean(between_subject_values(:)); 
+    between_subject_corrs = [between_subject_corrs; between_subject_values(:)];
+    
+    % Extract between-subject WITHIN-task correlations
+    between_subject_values = pfc_task_corr(start_idx:end_idx, :);
+    between_subject_values(:, start_idx:end_idx) = []; % Exclude same subject block
+    between_subject_within_task = arrayfun(@(i) between_subject_values(i, i:8:end), 1:8, 'UniformOutput', false);
+    mean_between_subject_within_task = cellfun(@mean, between_subject_within_task);
+end
+
+%%
+% Calculate averages
+average_within_subject = mean(mean_within_subject_values);
+stderr_within_subject = std(mean_within_subject_values)/sqrt(10);
+average_between_subject_within_task = mean(mean_between_subject_within_task);
+stderr_between_subject_within_task = std(mean_between_subject_within_task)/sqrt(8);
+
+%%
+fig=figure(1);
+set(gcf, 'Position', [100, 100, 600, 800]); % Set figure size (width x height in pixels)
+bar([average_within_subject average_between_subject_within_task], 'FaceColor', [0.8 0.8 0.8])
+hold on
+er=errorbar([average_within_subject average_between_subject_within_task],[stderr_within_subject stderr_between_subject_within_task],'LineStyle','none', 'Color','k');
+ylabel('LPFC Task Activity Correlation')
+xticklabels({'Within-Individual Across Task', 'Within-Task Across-Individual'});
+xtickangle(30)
+fontsize(fig, 16, "points")
+saveas(gcf,[outdir '/within_vs_across_subject_corr_bar.jpg'], 'jpg')
+
+%%
+[~, p, ~, stats] = ttest2(mean_within_subject_values, mean_between_subject_within_task, 'Tail', 'right'); % One-sample, one-tailed test
+statsT = table( ...
+strings(0,1), ... % Comparison
+zeros(0,1), ...   % PValue
+zeros(0,1), ...   % CorrectedPValue
+zeros(0,1), ...   % TStat
+zeros(0,1), ...   % CohensD
+zeros(0,1), ... % df 
+'VariableNames', {'Comparison', 'PValue', 'CorrectedPValue', 'TStat', 'CohensD', 'df'});
+
+stats_row = {'group',p,p,stats.tstat,stats.tstat/sqrt(stats.df+1), stats.df};
+statsT = [statsT; stats_row];
+numVars = varfun(@isnumeric, statsT, 'OutputFormat', 'uniform');
+
+% Apply rounding only to numeric variables
+statsT(:, numVars) = varfun(@(x) round(x, 3, 'significant'), statsT(:, numVars));    
+writetable(statsT, [outdir '/overall_stats.txt'], 'Delimiter', '\t');
+
+

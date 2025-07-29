@@ -1,0 +1,10 @@
+sub,sess,task,TR,dropFr,topDir,dataFolder,confoundsFolder,FDtype,runs,overall_runs
+HUBS01,1,rest,1.355,5,/projects/b1081/NSF_HUBS/Nifti/derivatives/,preproc_fmriprep-23.2.0a2_all/,preproc_fmriprep-23.2.0a2_all/,fFD,"1,2,3,4,","1,2,3,4,"
+HUBS01,2,rest,1.355,5,/projects/b1081/NSF_HUBS/Nifti/derivatives/,preproc_fmriprep-23.2.0a2_all/,preproc_fmriprep-23.2.0a2_all/,fFD,"1,2,3,4,","5,6,7,8,"
+HUBS01,3,rest,1.355,5,/projects/b1081/NSF_HUBS/Nifti/derivatives/,preproc_fmriprep-23.2.0a2_all/,preproc_fmriprep-23.2.0a2_all/,fFD,"1,2,3,4,5,","9,10,11,12,13,"
+HUBS01,4,rest,1.355,5,/projects/b1081/NSF_HUBS/Nifti/derivatives/,preproc_fmriprep-23.2.0a2_all/,preproc_fmriprep-23.2.0a2_all/,fFD,"1,2,3,4,5,","14,15,16,17,18,"
+HUBS01,5,rest,1.355,5,/projects/b1081/NSF_HUBS/Nifti/derivatives/,preproc_fmriprep-23.2.0a2_all/,preproc_fmriprep-23.2.0a2_all/,fFD,"1,2,3,4,","19,20,21,22,"
+HUBS01,6,rest,1.355,5,/projects/b1081/NSF_HUBS/Nifti/derivatives/,preproc_fmriprep-23.2.0a2_all/,preproc_fmriprep-23.2.0a2_all/,fFD,"1,2,3,","23,24,25,"
+HUBS01,7,rest,1.355,5,/projects/b1081/NSF_HUBS/Nifti/derivatives/,preproc_fmriprep-23.2.0a2_all/,preproc_fmriprep-23.2.0a2_all/,fFD,"1,2,","26,27,"
+HUBS01,8,rest,1.355,5,/projects/b1081/NSF_HUBS/Nifti/derivatives/,preproc_fmriprep-23.2.0a2_all/,preproc_fmriprep-23.2.0a2_all/,fFD,"1,2,3,","28,29,30,"
+HUBS01,9,rest,1.355,5,/projects/b1081/NSF_HUBS/Nifti/derivatives/,preproc_fmriprep-23.2.0a2_all/,preproc_fmriprep-23.2.0a2_all/,fFD,"1,2,3,","31,32,33,"

@@ -1,0 +1,10 @@
+task,name,idx
+audviswm,audwm,36
+audviswm,viswm,33
+spatialwm,spatialwm,9
+verbalwm,verbalwm,9
+msit,msit,9
+vmsit,vmsit,9
+audvisattn,audattn,27
+audvisattn,visattn,24
+

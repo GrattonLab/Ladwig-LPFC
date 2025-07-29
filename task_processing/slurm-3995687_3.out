@@ -1,0 +1,677 @@
+MATLAB is selecting SOFTWARE OPENGL rendering.
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2022 The MathWorks, Inc.
+             R2022a Update 4 (9.12.0.2009381) 64-bit (glnxa64)
+                                July 7, 2022
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+sub-HUBS03_ses-1_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1
+done fake nifti
+++ 3dTstat: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+++ Output dataset ./sub-HUBS03_ses-1_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_mean.nii
+++ 3dcalc: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./sub-HUBS03_ses-1_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii
+++ 3dDeconvolve: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: B. Douglas Ward, et al.
+++ loading dataset /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/scale/sub-HUBS03_ses-1_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii
+++ forcibly using TR=1.3550 seconds for -input dataset
+++ Skipping check for initial transients
+++ Imaging duration=624.7 s; Automatic polort=5
+++ -stim_times using TR=1.355 s for stimulus timing conversion
+++ -stim_times using TR=1.355 s for any -iresp output datasets
+++  [you can alter the -iresp TR via the -TR_times option]
+++ ** -stim_times NOTE ** guessing GLOBAL times if 1 time per line; LOCAL otherwise
+++ ** GUESSED ** -stim_times 1 using LOCAL times
+++ ** GUESSED ** -stim_times 2 using LOCAL times
+++ ** GUESSED ** -stim_times 3 using LOCAL times
+++ ** GUESSED ** -stim_times 4 using LOCAL times
+++ ** GUESSED ** -stim_times 5 using LOCAL times
+++ ** GUESSED ** -stim_times 6 using LOCAL times
+------------------------------------------------------------
+GLT matrix from 'SYM: pastself -presentself':
+   0   0   0   0   0   0   0  -1   1   0   0   0 
+ 
+------------------------------------------------------------
+GLT matrix from 'SYM: futureself -presentself':
+   0   0   0   0   0   0   1  -1   0   0   0   0 
+ 
+------------------------------------------------------------
+GLT matrix from 'SYM: futureself +pastself +presentself -futurenonself -pastnonself -presentnonself':
+   0   0   0   0   0   0   1   1   1  -1  -1  -1 
+ 
+++ Number of time points: 461 (no censoring)
+ + Number of parameters:  12 [6 baseline ; 6 signal]
+++ total shared memory needed = 373,543,800 bytes (about 374 million)
+++ mmap() memory allocated: 373,543,800 bytes (about 374 million)
+++ Memory required for output bricks = 373,543,800 bytes (about 374 million)
+++ Wrote matrix image to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-1_task-epiproj_X.jpg
+++ Wrote matrix values to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-1_task-epiproj_X.xmat.1D
+++ ========= Things you can do with the matrix file =========
+++ (a) Linear regression with ARMA(1,1) modeling of serial correlation:
+
+3dREMLfit -matrix /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-1_task-epiproj_X.xmat.1D -input /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/scale/sub-HUBS03_ses-1_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii \
+ -fout -tout -Rbuck /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-1_task-epiproj_stats_REML -Rvar /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-1_task-epiproj_stats_REMLvar \
+ -Rfitts /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-1_task-epiproj_fitts_REML \
+ -Rerrts /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-1_task-epiproj_errts_REML -verb
+ 
+++ N.B.: 3dREMLfit command above written to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.REML_cmd
+++ (b) Visualization/analysis of the matrix via ExamineXmat.R
+++ (c) Synthesis of sub-model datasets using 3dSynthesize
+++ ==========================================================
+++ ----- Signal+Baseline matrix condition [X] (461x12):  1.74626  ++ VERY GOOD ++
+++ ----- Signal-only matrix condition [X] (461x6):  1.00021  ++ VERY GOOD ++
+++ ----- Baseline-only matrix condition [X] (461x6):  1.01182  ++ VERY GOOD ++
+++ ----- polort-only matrix condition [X] (461x6):  1.01182  ++ VERY GOOD ++
+++ +++++ Matrix inverse average error = 3.91368e-16  ++ VERY GOOD ++
+++ Matrix setup time = 0.94 s
+++ Voxels in dataset: 98301
+++ Voxels per job:    12287
+++ Job #1: processing voxels 12287 to 24573; elapsed time=1.478
+++ Job #2: processing voxels 24574 to 36860; elapsed time=1.492
+++ Job #3: processing voxels 36861 to 49147; elapsed time=1.506
+++ Job #4: processing voxels 49148 to 61434; elapsed time=1.520
+++ Job #5: processing voxels 61435 to 73721; elapsed time=1.534
+++ Job #6: processing voxels 73722 to 86008; elapsed time=1.549
+++ Job #7: processing voxels 86009 to 98300; elapsed time=1.564
+++ Job #0: processing voxels 0 to 12286; elapsed time=1.574
+++ voxel loop:0123456789.0123456789.0123456789.0123456789.01234++ Job #1 finished; elapsed time=2.347
+56++ Job #2 finished; elapsed time=2.369
+++ Job #3 finished; elapsed time=2.372
+7++ Job #4 finished; elapsed time=2.400
+8++ Job #5 finished; elapsed time=2.405
+9.
+++ Job #0 waiting for children to finish; elapsed time=2.420
+++ Job #6 finished; elapsed time=2.430
+++ Job #7 finished; elapsed time=2.436
+++ Job #0 now finishing up; elapsed time=2.444
+++ Smallest FDR q [0 Full_Fstat] = 4.34664e-15
+++ Smallest FDR q [2 futureself#0_Tstat] = 2.68015e-14
+++ Smallest FDR q [3 futureself_Fstat] = 2.68015e-14
+++ Smallest FDR q [5 presentself#0_Tstat] = 2.87714e-14
+++ Smallest FDR q [6 presentself_Fstat] = 2.87736e-14
+++ Smallest FDR q [8 pastself#0_Tstat] = 1.91524e-14
+++ Smallest FDR q [9 pastself_Fstat] = 1.91524e-14
+++ Smallest FDR q [11 futurenonself#0_Tstat] = 1.99028e-14
+++ Smallest FDR q [12 futurenonself_Fstat] = 1.99019e-14
+++ Smallest FDR q [14 presentnonself#0_Tstat] = 2.06634e-14
+++ Smallest FDR q [15 presentnonself_Fstat] = 2.0664e-14
+++ Smallest FDR q [17 pastnonself#0_Tstat] = 1.62341e-14
+++ Smallest FDR q [18 pastnonself_Fstat] = 1.62346e-14
+++ Smallest FDR q [20 past_present_self_GLT#0_Tstat] = 2.57061e-12
+++ Smallest FDR q [21 past_present_self_GLT_Fstat] = 2.57069e-12
+++ Smallest FDR q [23 future_present_self_GLT#0_Tstat] = 6.41715e-13
+++ Smallest FDR q [24 future_present_self_GLT_Fstat] = 6.41735e-13
+++ Smallest FDR q [26 self-nonself_GLT#0_Tstat] = 6.94599e-12
+++ Smallest FDR q [27 self-nonself_GLT_Fstat] = 6.94551e-12
+++ Wrote bucket dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-1_task-epiproj_stats.nii
+ + created 19 FDR curves in bucket header
+++ Wrote 3D+time dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-1_task-epiproj_fitts.nii
+++ Wrote 3D+time dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-1_task-epiproj_errts.nii
+++ Program finished; elapsed time=12.378
+449
+++ 3dcalc: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-1_task-epiproj_zstats.nii
+done fake nifti to cifti
+done fake nifti to cifti
+sub-HUBS03_ses-2_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1
+done fake nifti
+++ 3dTstat: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+++ Output dataset ./sub-HUBS03_ses-2_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_mean.nii
+++ 3dcalc: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./sub-HUBS03_ses-2_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii
+++ 3dDeconvolve: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: B. Douglas Ward, et al.
+++ loading dataset /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/scale/sub-HUBS03_ses-2_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii
+++ forcibly using TR=1.3550 seconds for -input dataset
+++ Skipping check for initial transients
+++ Imaging duration=624.7 s; Automatic polort=5
+++ -stim_times using TR=1.355 s for stimulus timing conversion
+++ -stim_times using TR=1.355 s for any -iresp output datasets
+++  [you can alter the -iresp TR via the -TR_times option]
+++ ** -stim_times NOTE ** guessing GLOBAL times if 1 time per line; LOCAL otherwise
+++ ** GUESSED ** -stim_times 1 using LOCAL times
+++ ** GUESSED ** -stim_times 2 using LOCAL times
+++ ** GUESSED ** -stim_times 3 using LOCAL times
+++ ** GUESSED ** -stim_times 4 using LOCAL times
+++ ** GUESSED ** -stim_times 5 using LOCAL times
+++ ** GUESSED ** -stim_times 6 using LOCAL times
+------------------------------------------------------------
+GLT matrix from 'SYM: pastself -presentself':
+   0   0   0   0   0   0   0  -1   1   0   0   0 
+ 
+------------------------------------------------------------
+GLT matrix from 'SYM: futureself -presentself':
+   0   0   0   0   0   0   1  -1   0   0   0   0 
+ 
+------------------------------------------------------------
+GLT matrix from 'SYM: futureself +pastself +presentself -futurenonself -pastnonself -presentnonself':
+   0   0   0   0   0   0   1   1   1  -1  -1  -1 
+ 
+++ Number of time points: 461 (no censoring)
+ + Number of parameters:  12 [6 baseline ; 6 signal]
+++ total shared memory needed = 373,543,800 bytes (about 374 million)
+++ mmap() memory allocated: 373,543,800 bytes (about 374 million)
+++ Memory required for output bricks = 373,543,800 bytes (about 374 million)
+++ Wrote matrix image to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-2_task-epiproj_X.jpg
+++ Wrote matrix values to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-2_task-epiproj_X.xmat.1D
+++ ========= Things you can do with the matrix file =========
+++ (a) Linear regression with ARMA(1,1) modeling of serial correlation:
+
+3dREMLfit -matrix /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-2_task-epiproj_X.xmat.1D -input /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/scale/sub-HUBS03_ses-2_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii \
+ -fout -tout -Rbuck /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-2_task-epiproj_stats_REML -Rvar /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-2_task-epiproj_stats_REMLvar \
+ -Rfitts /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-2_task-epiproj_fitts_REML \
+ -Rerrts /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-2_task-epiproj_errts_REML -verb
+ 
+++ N.B.: 3dREMLfit command above written to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.REML_cmd
+++ (b) Visualization/analysis of the matrix via ExamineXmat.R
+++ (c) Synthesis of sub-model datasets using 3dSynthesize
+++ ==========================================================
+++ ----- Signal+Baseline matrix condition [X] (461x12):  1.74776  ++ VERY GOOD ++
+++ ----- Signal-only matrix condition [X] (461x6):  1.0002  ++ VERY GOOD ++
+++ ----- Baseline-only matrix condition [X] (461x6):  1.01182  ++ VERY GOOD ++
+++ ----- polort-only matrix condition [X] (461x6):  1.01182  ++ VERY GOOD ++
+++ +++++ Matrix inverse average error = 3.32773e-16  ++ VERY GOOD ++
+++ Matrix setup time = 0.94 s
+++ Voxels in dataset: 98301
+++ Voxels per job:    12287
+++ Job #1: processing voxels 12287 to 24573; elapsed time=1.496
+++ Job #2: processing voxels 24574 to 36860; elapsed time=1.510
+++ Job #3: processing voxels 36861 to 49147; elapsed time=1.524
+++ Job #4: processing voxels 49148 to 61434; elapsed time=1.538
+++ Job #5: processing voxels 61435 to 73721; elapsed time=1.553
+++ Job #6: processing voxels 73722 to 86008; elapsed time=1.567
+++ Job #7: processing voxels 86009 to 98300; elapsed time=1.582
+++ Job #0: processing voxels 0 to 12286; elapsed time=1.592
+++ voxel loop:0123456789.0123456789.0123456789.0123456789.01234++ Job #1 finished; elapsed time=2.363
+++ Job #3 finished; elapsed time=2.372
+5++ Job #2 finished; elapsed time=2.378
+6++ Job #5 finished; elapsed time=2.397
+78++ Job #6 finished; elapsed time=2.427
+++ Job #4 finished; elapsed time=2.431
+++ Job #7 finished; elapsed time=2.439
+9.
+++ Job #0 waiting for children to finish; elapsed time=2.446
+++ Job #0 now finishing up; elapsed time=2.446
+++ Smallest FDR q [0 Full_Fstat] = 1.36136e-14
+++ Smallest FDR q [2 futureself#0_Tstat] = 9.48499e-12
+++ Smallest FDR q [3 futureself_Fstat] = 9.48533e-12
+++ Smallest FDR q [5 presentself#0_Tstat] = 4.39842e-12
+++ Smallest FDR q [6 presentself_Fstat] = 4.39894e-12
+++ Smallest FDR q [8 pastself#0_Tstat] = 4.98974e-13
+++ Smallest FDR q [9 pastself_Fstat] = 4.989e-13
+++ Smallest FDR q [11 futurenonself#0_Tstat] = 1.33791e-13
+++ Smallest FDR q [12 futurenonself_Fstat] = 1.33776e-13
+++ Smallest FDR q [14 presentnonself#0_Tstat] = 7.87298e-13
+++ Smallest FDR q [15 presentnonself_Fstat] = 7.87289e-13
+++ Smallest FDR q [17 pastnonself#0_Tstat] = 8.43088e-14
+++ Smallest FDR q [18 pastnonself_Fstat] = 8.42899e-14
+++ Smallest FDR q [20 past_present_self_GLT#0_Tstat] = 1.61303e-11
+++ Smallest FDR q [21 past_present_self_GLT_Fstat] = 1.61302e-11
+++ Smallest FDR q [23 future_present_self_GLT#0_Tstat] = 2.25679e-07
+++ Smallest FDR q [24 future_present_self_GLT_Fstat] = 2.25705e-07
+++ Smallest FDR q [26 self-nonself_GLT#0_Tstat] = 2.15287e-12
+++ Smallest FDR q [27 self-nonself_GLT_Fstat] = 2.1528e-12
+++ Wrote bucket dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-2_task-epiproj_stats.nii
+ + created 19 FDR curves in bucket header
+++ Wrote 3D+time dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-2_task-epiproj_fitts.nii
+++ Wrote 3D+time dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-2_task-epiproj_errts.nii
+++ Program finished; elapsed time=12.568
+449
+++ 3dcalc: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-2_task-epiproj_zstats.nii
+done fake nifti to cifti
+done fake nifti to cifti
+sub-HUBS03_ses-3_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1
+done fake nifti
+++ 3dTstat: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+++ Output dataset ./sub-HUBS03_ses-3_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_mean.nii
+++ 3dcalc: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./sub-HUBS03_ses-3_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii
+++ 3dDeconvolve: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: B. Douglas Ward, et al.
+++ loading dataset /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/scale/sub-HUBS03_ses-3_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii
+++ forcibly using TR=1.3550 seconds for -input dataset
+++ Skipping check for initial transients
+++ Imaging duration=624.7 s; Automatic polort=5
+++ -stim_times using TR=1.355 s for stimulus timing conversion
+++ -stim_times using TR=1.355 s for any -iresp output datasets
+++  [you can alter the -iresp TR via the -TR_times option]
+++ ** -stim_times NOTE ** guessing GLOBAL times if 1 time per line; LOCAL otherwise
+++ ** GUESSED ** -stim_times 1 using LOCAL times
+++ ** GUESSED ** -stim_times 2 using LOCAL times
+++ ** GUESSED ** -stim_times 3 using LOCAL times
+++ ** GUESSED ** -stim_times 4 using LOCAL times
+++ ** GUESSED ** -stim_times 5 using LOCAL times
+++ ** GUESSED ** -stim_times 6 using LOCAL times
+------------------------------------------------------------
+GLT matrix from 'SYM: pastself -presentself':
+   0   0   0   0   0   0   0  -1   1   0   0   0 
+ 
+------------------------------------------------------------
+GLT matrix from 'SYM: futureself -presentself':
+   0   0   0   0   0   0   1  -1   0   0   0   0 
+ 
+------------------------------------------------------------
+GLT matrix from 'SYM: futureself +pastself +presentself -futurenonself -pastnonself -presentnonself':
+   0   0   0   0   0   0   1   1   1  -1  -1  -1 
+ 
+++ Number of time points: 461 (no censoring)
+ + Number of parameters:  12 [6 baseline ; 6 signal]
+++ total shared memory needed = 373,543,800 bytes (about 374 million)
+++ mmap() memory allocated: 373,543,800 bytes (about 374 million)
+++ Memory required for output bricks = 373,543,800 bytes (about 374 million)
+++ Wrote matrix image to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-3_task-epiproj_X.jpg
+++ Wrote matrix values to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-3_task-epiproj_X.xmat.1D
+++ ========= Things you can do with the matrix file =========
+++ (a) Linear regression with ARMA(1,1) modeling of serial correlation:
+
+3dREMLfit -matrix /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-3_task-epiproj_X.xmat.1D -input /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/scale/sub-HUBS03_ses-3_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii \
+ -fout -tout -Rbuck /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-3_task-epiproj_stats_REML -Rvar /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-3_task-epiproj_stats_REMLvar \
+ -Rfitts /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-3_task-epiproj_fitts_REML \
+ -Rerrts /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-3_task-epiproj_errts_REML -verb
+ 
+++ N.B.: 3dREMLfit command above written to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.REML_cmd
+++ (b) Visualization/analysis of the matrix via ExamineXmat.R
+++ (c) Synthesis of sub-model datasets using 3dSynthesize
+++ ==========================================================
+++ ----- Signal+Baseline matrix condition [X] (461x12):  1.74682  ++ VERY GOOD ++
+++ ----- Signal-only matrix condition [X] (461x6):  1.00018  ++ VERY GOOD ++
+++ ----- Baseline-only matrix condition [X] (461x6):  1.01182  ++ VERY GOOD ++
+++ ----- polort-only matrix condition [X] (461x6):  1.01182  ++ VERY GOOD ++
+++ +++++ Matrix inverse average error = 4.72482e-16  ++ VERY GOOD ++
+++ Matrix setup time = 0.90 s
+++ Voxels in dataset: 98301
+++ Voxels per job:    12287
+++ Job #1: processing voxels 12287 to 24573; elapsed time=1.445
+++ Job #2: processing voxels 24574 to 36860; elapsed time=1.459
+++ Job #3: processing voxels 36861 to 49147; elapsed time=1.474
+++ Job #4: processing voxels 49148 to 61434; elapsed time=1.488
+++ Job #5: processing voxels 61435 to 73721; elapsed time=1.502
+++ Job #6: processing voxels 73722 to 86008; elapsed time=1.517
+++ Job #7: processing voxels 86009 to 98300; elapsed time=1.532
+++ Job #0: processing voxels 0 to 12286; elapsed time=1.542
+++ voxel loop:0123456789.0123456789.0123456789.0123456789.01234++ Job #1 finished; elapsed time=2.293
+5++ Job #3 finished; elapsed time=2.322
+67++ Job #2 finished; elapsed time=2.343
+++ Job #5 finished; elapsed time=2.353
+8++ Job #4 finished; elapsed time=2.367
+9.
+++ Job #0 waiting for children to finish; elapsed time=2.377
+++ Job #7 finished; elapsed time=2.377
+++ Job #6 finished; elapsed time=2.396
+++ Job #0 now finishing up; elapsed time=2.405
+++ Smallest FDR q [0 Full_Fstat] = 3.68249e-15
+++ Smallest FDR q [2 futureself#0_Tstat] = 2.62501e-14
+++ Smallest FDR q [3 futureself_Fstat] = 2.62525e-14
+++ Smallest FDR q [5 presentself#0_Tstat] = 3.09549e-14
+++ Smallest FDR q [6 presentself_Fstat] = 3.09563e-14
+++ Smallest FDR q [8 pastself#0_Tstat] = 3.86492e-14
+++ Smallest FDR q [9 pastself_Fstat] = 3.86477e-14
+++ Smallest FDR q [11 futurenonself#0_Tstat] = 1.80629e-14
+++ Smallest FDR q [12 futurenonself_Fstat] = 1.80584e-14
+++ Smallest FDR q [14 presentnonself#0_Tstat] = 1.63597e-14
+++ Smallest FDR q [15 presentnonself_Fstat] = 1.63592e-14
+++ Smallest FDR q [17 pastnonself#0_Tstat] = 1.85555e-14
+++ Smallest FDR q [18 pastnonself_Fstat] = 1.85504e-14
+++ Smallest FDR q [20 past_present_self_GLT#0_Tstat] = 3.49151e-07
+++ Smallest FDR q [21 past_present_self_GLT_Fstat] = 3.49177e-07
+++ Smallest FDR q [23 future_present_self_GLT#0_Tstat] = 1.24811e-07
+++ Smallest FDR q [24 future_present_self_GLT_Fstat] = 1.2483e-07
+++ Smallest FDR q [26 self-nonself_GLT#0_Tstat] = 2.09817e-13
+++ Smallest FDR q [27 self-nonself_GLT_Fstat] = 2.09781e-13
+++ Wrote bucket dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-3_task-epiproj_stats.nii
+ + created 19 FDR curves in bucket header
+++ Wrote 3D+time dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-3_task-epiproj_fitts.nii
+++ Wrote 3D+time dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-3_task-epiproj_errts.nii
+++ Program finished; elapsed time=11.910
+449
+++ 3dcalc: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-3_task-epiproj_zstats.nii
+done fake nifti to cifti
+done fake nifti to cifti
+sub-HUBS03_ses-4_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1
+done fake nifti
+++ 3dTstat: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+++ Output dataset ./sub-HUBS03_ses-4_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_mean.nii
+++ 3dcalc: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./sub-HUBS03_ses-4_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii
+++ 3dDeconvolve: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: B. Douglas Ward, et al.
+++ loading dataset /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/scale/sub-HUBS03_ses-4_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii
+++ forcibly using TR=1.3550 seconds for -input dataset
+++ Skipping check for initial transients
+++ Imaging duration=624.7 s; Automatic polort=5
+++ -stim_times using TR=1.355 s for stimulus timing conversion
+++ -stim_times using TR=1.355 s for any -iresp output datasets
+++  [you can alter the -iresp TR via the -TR_times option]
+++ ** -stim_times NOTE ** guessing GLOBAL times if 1 time per line; LOCAL otherwise
+++ ** GUESSED ** -stim_times 1 using LOCAL times
+++ ** GUESSED ** -stim_times 2 using LOCAL times
+++ ** GUESSED ** -stim_times 3 using LOCAL times
+++ ** GUESSED ** -stim_times 4 using LOCAL times
+++ ** GUESSED ** -stim_times 5 using LOCAL times
+++ ** GUESSED ** -stim_times 6 using LOCAL times
+------------------------------------------------------------
+GLT matrix from 'SYM: pastself -presentself':
+   0   0   0   0   0   0   0  -1   1   0   0   0 
+ 
+------------------------------------------------------------
+GLT matrix from 'SYM: futureself -presentself':
+   0   0   0   0   0   0   1  -1   0   0   0   0 
+ 
+------------------------------------------------------------
+GLT matrix from 'SYM: futureself +pastself +presentself -futurenonself -pastnonself -presentnonself':
+   0   0   0   0   0   0   1   1   1  -1  -1  -1 
+ 
+++ Number of time points: 461 (no censoring)
+ + Number of parameters:  12 [6 baseline ; 6 signal]
+++ total shared memory needed = 373,543,800 bytes (about 374 million)
+++ mmap() memory allocated: 373,543,800 bytes (about 374 million)
+++ Memory required for output bricks = 373,543,800 bytes (about 374 million)
+++ Wrote matrix image to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-4_task-epiproj_X.jpg
+++ Wrote matrix values to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-4_task-epiproj_X.xmat.1D
+++ ========= Things you can do with the matrix file =========
+++ (a) Linear regression with ARMA(1,1) modeling of serial correlation:
+
+3dREMLfit -matrix /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-4_task-epiproj_X.xmat.1D -input /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/scale/sub-HUBS03_ses-4_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii \
+ -fout -tout -Rbuck /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-4_task-epiproj_stats_REML -Rvar /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-4_task-epiproj_stats_REMLvar \
+ -Rfitts /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-4_task-epiproj_fitts_REML \
+ -Rerrts /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-4_task-epiproj_errts_REML -verb
+ 
+++ N.B.: 3dREMLfit command above written to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.REML_cmd
+++ (b) Visualization/analysis of the matrix via ExamineXmat.R
+++ (c) Synthesis of sub-model datasets using 3dSynthesize
+++ ==========================================================
+++ ----- Signal+Baseline matrix condition [X] (461x12):  1.74669  ++ VERY GOOD ++
+++ ----- Signal-only matrix condition [X] (461x6):  1.00018  ++ VERY GOOD ++
+++ ----- Baseline-only matrix condition [X] (461x6):  1.01182  ++ VERY GOOD ++
+++ ----- polort-only matrix condition [X] (461x6):  1.01182  ++ VERY GOOD ++
+++ +++++ Matrix inverse average error = 3.92355e-16  ++ VERY GOOD ++
+++ Matrix setup time = 0.93 s
+++ Voxels in dataset: 98301
+++ Voxels per job:    12287
+++ Job #1: processing voxels 12287 to 24573; elapsed time=1.511
+++ Job #2: processing voxels 24574 to 36860; elapsed time=1.525
+++ Job #3: processing voxels 36861 to 49147; elapsed time=1.539
+++ Job #4: processing voxels 49148 to 61434; elapsed time=1.553
+++ Job #5: processing voxels 61435 to 73721; elapsed time=1.567
+++ Job #6: processing voxels 73722 to 86008; elapsed time=1.582
+++ Job #7: processing voxels 86009 to 98300; elapsed time=1.597
+++ Job #0: processing voxels 0 to 12286; elapsed time=1.607
+++ voxel loop:0123456789.0123456789.0123456789.0123456789.012345++ Job #1 finished; elapsed time=2.386
+6++ Job #3 finished; elapsed time=2.408
+7++ Job #2 finished; elapsed time=2.421
+8++ Job #5 finished; elapsed time=2.438
+9.++ Job #4 finished; elapsed time=2.448
+
+++ Job #0 waiting for children to finish; elapsed time=2.451
+++ Job #7 finished; elapsed time=2.460
+++ Job #6 finished; elapsed time=2.480
+++ Job #0 now finishing up; elapsed time=2.488
+++ Smallest FDR q [0 Full_Fstat] = 1.82989e-14
+++ Smallest FDR q [2 futureself#0_Tstat] = 4.41513e-12
+++ Smallest FDR q [3 futureself_Fstat] = 4.41467e-12
+++ Smallest FDR q [5 presentself#0_Tstat] = 1.90939e-13
+++ Smallest FDR q [6 presentself_Fstat] = 1.90923e-13
+++ Smallest FDR q [8 pastself#0_Tstat] = 2.35436e-12
+++ Smallest FDR q [9 pastself_Fstat] = 2.35427e-12
+++ Smallest FDR q [11 futurenonself#0_Tstat] = 3.03609e-12
+++ Smallest FDR q [12 futurenonself_Fstat] = 3.03581e-12
+++ Smallest FDR q [14 presentnonself#0_Tstat] = 1.69902e-13
+++ Smallest FDR q [15 presentnonself_Fstat] = 1.69849e-13
+++ Smallest FDR q [17 pastnonself#0_Tstat] = 1.14809e-13
+++ Smallest FDR q [18 pastnonself_Fstat] = 1.14801e-13
+++ Smallest FDR q [20 past_present_self_GLT#0_Tstat] = 4.98422e-09
+++ Smallest FDR q [21 past_present_self_GLT_Fstat] = 4.98479e-09
+++ Smallest FDR q [23 future_present_self_GLT#0_Tstat] = 3.54768e-12
+++ Smallest FDR q [24 future_present_self_GLT_Fstat] = 3.54768e-12
+++ Smallest FDR q [26 self-nonself_GLT#0_Tstat] = 1.94754e-11
+++ Smallest FDR q [27 self-nonself_GLT_Fstat] = 1.9474e-11
+++ Wrote bucket dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-4_task-epiproj_stats.nii
+ + created 19 FDR curves in bucket header
+++ Wrote 3D+time dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-4_task-epiproj_fitts.nii
+++ Wrote 3D+time dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-4_task-epiproj_errts.nii
+++ Program finished; elapsed time=12.675
+449
+++ 3dcalc: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-4_task-epiproj_zstats.nii
+done fake nifti to cifti
+done fake nifti to cifti
+sub-HUBS03_ses-5_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1
+done fake nifti
+++ 3dTstat: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+++ Output dataset ./sub-HUBS03_ses-5_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_mean.nii
+++ 3dcalc: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./sub-HUBS03_ses-5_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii
+++ 3dDeconvolve: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: B. Douglas Ward, et al.
+++ loading dataset /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/scale/sub-HUBS03_ses-5_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii
+++ forcibly using TR=1.3550 seconds for -input dataset
+++ Skipping check for initial transients
+++ Imaging duration=624.7 s; Automatic polort=5
+++ -stim_times using TR=1.355 s for stimulus timing conversion
+++ -stim_times using TR=1.355 s for any -iresp output datasets
+++  [you can alter the -iresp TR via the -TR_times option]
+++ ** -stim_times NOTE ** guessing GLOBAL times if 1 time per line; LOCAL otherwise
+++ ** GUESSED ** -stim_times 1 using LOCAL times
+++ ** GUESSED ** -stim_times 2 using LOCAL times
+++ ** GUESSED ** -stim_times 3 using LOCAL times
+++ ** GUESSED ** -stim_times 4 using LOCAL times
+++ ** GUESSED ** -stim_times 5 using LOCAL times
+++ ** GUESSED ** -stim_times 6 using LOCAL times
+------------------------------------------------------------
+GLT matrix from 'SYM: pastself -presentself':
+   0   0   0   0   0   0   0  -1   1   0   0   0 
+ 
+------------------------------------------------------------
+GLT matrix from 'SYM: futureself -presentself':
+   0   0   0   0   0   0   1  -1   0   0   0   0 
+ 
+------------------------------------------------------------
+GLT matrix from 'SYM: futureself +pastself +presentself -futurenonself -pastnonself -presentnonself':
+   0   0   0   0   0   0   1   1   1  -1  -1  -1 
+ 
+++ Number of time points: 461 (no censoring)
+ + Number of parameters:  12 [6 baseline ; 6 signal]
+++ total shared memory needed = 373,543,800 bytes (about 374 million)
+++ mmap() memory allocated: 373,543,800 bytes (about 374 million)
+++ Memory required for output bricks = 373,543,800 bytes (about 374 million)
+++ Wrote matrix image to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-5_task-epiproj_X.jpg
+++ Wrote matrix values to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-5_task-epiproj_X.xmat.1D
+++ ========= Things you can do with the matrix file =========
+++ (a) Linear regression with ARMA(1,1) modeling of serial correlation:
+
+3dREMLfit -matrix /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-5_task-epiproj_X.xmat.1D -input /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/scale/sub-HUBS03_ses-5_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii \
+ -fout -tout -Rbuck /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-5_task-epiproj_stats_REML -Rvar /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-5_task-epiproj_stats_REMLvar \
+ -Rfitts /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-5_task-epiproj_fitts_REML \
+ -Rerrts /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-5_task-epiproj_errts_REML -verb
+ 
+++ N.B.: 3dREMLfit command above written to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.REML_cmd
+++ (b) Visualization/analysis of the matrix via ExamineXmat.R
+++ (c) Synthesis of sub-model datasets using 3dSynthesize
+++ ==========================================================
+++ ----- Signal+Baseline matrix condition [X] (461x12):  1.74723  ++ VERY GOOD ++
+++ ----- Signal-only matrix condition [X] (461x6):  1.00018  ++ VERY GOOD ++
+++ ----- Baseline-only matrix condition [X] (461x6):  1.01182  ++ VERY GOOD ++
+++ ----- polort-only matrix condition [X] (461x6):  1.01182  ++ VERY GOOD ++
+++ +++++ Matrix inverse average error = 3.97408e-16  ++ VERY GOOD ++
+++ Matrix setup time = 0.98 s
+++ Voxels in dataset: 98301
+++ Voxels per job:    12287
+++ Job #1: processing voxels 12287 to 24573; elapsed time=1.531
+++ Job #2: processing voxels 24574 to 36860; elapsed time=1.545
+++ Job #3: processing voxels 36861 to 49147; elapsed time=1.559
+++ Job #4: processing voxels 49148 to 61434; elapsed time=1.573
+++ Job #5: processing voxels 61435 to 73721; elapsed time=1.588
+++ Job #6: processing voxels 73722 to 86008; elapsed time=1.603
+++ Job #7: processing voxels 86009 to 98300; elapsed time=1.618
+++ Job #0: processing voxels 0 to 12286; elapsed time=1.628
+++ voxel loop:0123456789.0123456789.0123456789.0123456789.01234++ Job #1 finished; elapsed time=2.415
+56++ Job #3 finished; elapsed time=2.444
+++ Job #2 finished; elapsed time=2.447
+7++ Job #4 finished; elapsed time=2.471
+++ Job #5 finished; elapsed time=2.476
+8++ Job #7 finished; elapsed time=2.491
+9.
+++ Job #0 waiting for children to finish; elapsed time=2.498
+++ Job #6 finished; elapsed time=2.504
+++ Job #0 now finishing up; elapsed time=2.512
+++ Smallest FDR q [0 Full_Fstat] = 1.15711e-14
+++ Smallest FDR q [2 futureself#0_Tstat] = 1.66687e-13
+++ Smallest FDR q [3 futureself_Fstat] = 1.6668e-13
+++ Smallest FDR q [5 presentself#0_Tstat] = 1.50963e-13
+++ Smallest FDR q [6 presentself_Fstat] = 1.50953e-13
+++ Smallest FDR q [8 pastself#0_Tstat] = 8.51055e-14
+++ Smallest FDR q [9 pastself_Fstat] = 8.51117e-14
+++ Smallest FDR q [11 futurenonself#0_Tstat] = 5.31809e-14
+++ Smallest FDR q [12 futurenonself_Fstat] = 5.31771e-14
+++ Smallest FDR q [14 presentnonself#0_Tstat] = 6.8879e-14
+++ Smallest FDR q [15 presentnonself_Fstat] = 6.88817e-14
+++ Smallest FDR q [17 pastnonself#0_Tstat] = 1.36744e-13
+++ Smallest FDR q [18 pastnonself_Fstat] = 1.36738e-13
+++ Smallest FDR q [20 past_present_self_GLT#0_Tstat] = 4.71232e-09
+++ Smallest FDR q [21 past_present_self_GLT_Fstat] = 4.7123e-09
+++ Smallest FDR q [23 future_present_self_GLT#0_Tstat] = 2.12569e-11
+++ Smallest FDR q [24 future_present_self_GLT_Fstat] = 2.12563e-11
+++ Smallest FDR q [26 self-nonself_GLT#0_Tstat] = 1.04911e-09
+++ Smallest FDR q [27 self-nonself_GLT_Fstat] = 1.04917e-09
+++ Wrote bucket dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-5_task-epiproj_stats.nii
+ + created 19 FDR curves in bucket header
+++ Wrote 3D+time dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-5_task-epiproj_fitts.nii
+++ Wrote 3D+time dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-5_task-epiproj_errts.nii
+++ Program finished; elapsed time=13.072
+449
+++ 3dcalc: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-5_task-epiproj_zstats.nii
+done fake nifti to cifti
+done fake nifti to cifti
+sub-HUBS03_ses-6_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1
+done fake nifti
+++ 3dTstat: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+++ Output dataset ./sub-HUBS03_ses-6_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_mean.nii
+++ 3dcalc: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./sub-HUBS03_ses-6_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii
+++ 3dDeconvolve: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: B. Douglas Ward, et al.
+++ loading dataset /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/scale/sub-HUBS03_ses-6_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii
+++ forcibly using TR=1.3550 seconds for -input dataset
+++ Skipping check for initial transients
+++ Imaging duration=624.7 s; Automatic polort=5
+++ -stim_times using TR=1.355 s for stimulus timing conversion
+++ -stim_times using TR=1.355 s for any -iresp output datasets
+++  [you can alter the -iresp TR via the -TR_times option]
+++ ** -stim_times NOTE ** guessing GLOBAL times if 1 time per line; LOCAL otherwise
+++ ** GUESSED ** -stim_times 1 using LOCAL times
+++ ** GUESSED ** -stim_times 2 using LOCAL times
+++ ** GUESSED ** -stim_times 3 using LOCAL times
+++ ** GUESSED ** -stim_times 4 using LOCAL times
+++ ** GUESSED ** -stim_times 5 using LOCAL times
+++ ** GUESSED ** -stim_times 6 using LOCAL times
+------------------------------------------------------------
+GLT matrix from 'SYM: pastself -presentself':
+   0   0   0   0   0   0   0  -1   1   0   0   0 
+ 
+------------------------------------------------------------
+GLT matrix from 'SYM: futureself -presentself':
+   0   0   0   0   0   0   1  -1   0   0   0   0 
+ 
+------------------------------------------------------------
+GLT matrix from 'SYM: futureself +pastself +presentself -futurenonself -pastnonself -presentnonself':
+   0   0   0   0   0   0   1   1   1  -1  -1  -1 
+ 
+++ Number of time points: 461 (no censoring)
+ + Number of parameters:  12 [6 baseline ; 6 signal]
+++ total shared memory needed = 373,543,800 bytes (about 374 million)
+++ mmap() memory allocated: 373,543,800 bytes (about 374 million)
+++ Memory required for output bricks = 373,543,800 bytes (about 374 million)
+++ Wrote matrix image to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-6_task-epiproj_X.jpg
+++ Wrote matrix values to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-6_task-epiproj_X.xmat.1D
+++ ========= Things you can do with the matrix file =========
+++ (a) Linear regression with ARMA(1,1) modeling of serial correlation:
+
+3dREMLfit -matrix /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-6_task-epiproj_X.xmat.1D -input /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/scale/sub-HUBS03_ses-6_task-epiproj_LR_surf_subcort_222_32k_fsLR_smooth1_scale.nii \
+ -fout -tout -Rbuck /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-6_task-epiproj_stats_REML -Rvar /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-6_task-epiproj_stats_REMLvar \
+ -Rfitts /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-6_task-epiproj_fitts_REML \
+ -Rerrts /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-6_task-epiproj_errts_REML -verb
+ 
+++ N.B.: 3dREMLfit command above written to file /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.REML_cmd
+++ (b) Visualization/analysis of the matrix via ExamineXmat.R
+++ (c) Synthesis of sub-model datasets using 3dSynthesize
+++ ==========================================================
+++ ----- Signal+Baseline matrix condition [X] (461x12):  1.74632  ++ VERY GOOD ++
+++ ----- Signal-only matrix condition [X] (461x6):  1.00021  ++ VERY GOOD ++
+++ ----- Baseline-only matrix condition [X] (461x6):  1.01182  ++ VERY GOOD ++
+++ ----- polort-only matrix condition [X] (461x6):  1.01182  ++ VERY GOOD ++
+++ +++++ Matrix inverse average error = 4.55365e-16  ++ VERY GOOD ++
+++ Matrix setup time = 0.95 s
+++ Voxels in dataset: 98301
+++ Voxels per job:    12287
+++ Job #1: processing voxels 12287 to 24573; elapsed time=1.496
+++ Job #2: processing voxels 24574 to 36860; elapsed time=1.510
+++ Job #3: processing voxels 36861 to 49147; elapsed time=1.524
+++ Job #4: processing voxels 49148 to 61434; elapsed time=1.538
+++ Job #5: processing voxels 61435 to 73721; elapsed time=1.553
+++ Job #6: processing voxels 73722 to 86008; elapsed time=1.567
+++ Job #7: processing voxels 86009 to 98300; elapsed time=1.583
+++ Job #0: processing voxels 0 to 12286; elapsed time=1.593
+++ voxel loop:0123456789.0123456789.0123456789.0123456789.01234++ Job #1 finished; elapsed time=2.366
+56++ Job #2 finished; elapsed time=2.394
+++ Job #3 finished; elapsed time=2.398
+78++ Job #4 finished; elapsed time=2.428
+++ Job #5 finished; elapsed time=2.429
+9.
+++ Job #0 waiting for children to finish; elapsed time=2.444
+++ Job #6 finished; elapsed time=2.451
+++ Job #7 finished; elapsed time=2.458
+++ Job #0 now finishing up; elapsed time=2.465
+++ Smallest FDR q [0 Full_Fstat] = 1.69341e-14
+++ Smallest FDR q [2 futureself#0_Tstat] = 1.59437e-13
+++ Smallest FDR q [3 futureself_Fstat] = 1.59437e-13
+++ Smallest FDR q [5 presentself#0_Tstat] = 4.51272e-13
+++ Smallest FDR q [6 presentself_Fstat] = 4.51253e-13
+++ Smallest FDR q [8 pastself#0_Tstat] = 1.9367e-13
+++ Smallest FDR q [9 pastself_Fstat] = 1.93677e-13
+++ Smallest FDR q [11 futurenonself#0_Tstat] = 3.03169e-13
+++ Smallest FDR q [12 futurenonself_Fstat] = 3.03115e-13
+++ Smallest FDR q [14 presentnonself#0_Tstat] = 2.97085e-13
+++ Smallest FDR q [15 presentnonself_Fstat] = 2.9704e-13
+++ Smallest FDR q [17 pastnonself#0_Tstat] = 6.03117e-13
+++ Smallest FDR q [18 pastnonself_Fstat] = 6.0317e-13
+++ Smallest FDR q [20 past_present_self_GLT#0_Tstat] = 8.29412e-12
+++ Smallest FDR q [21 past_present_self_GLT_Fstat] = 8.29456e-12
+++ Smallest FDR q [23 future_present_self_GLT#0_Tstat] = 2.6052e-11
+++ Smallest FDR q [24 future_present_self_GLT_Fstat] = 2.6052e-11
+++ Smallest FDR q [26 self-nonself_GLT#0_Tstat] = 5.87756e-10
+++ Smallest FDR q [27 self-nonself_GLT_Fstat] = 5.87775e-10
+++ Wrote bucket dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-6_task-epiproj_stats.nii
+ + created 19 FDR curves in bucket header
+++ Wrote 3D+time dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-6_task-epiproj_fitts.nii
+++ Wrote 3D+time dataset into /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-6_task-epiproj_errts.nii
+++ Program finished; elapsed time=12.798
+449
+++ 3dcalc: AFNI version=AFNI_24.1.11 (May 10 2024) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset /projects/b1081/NSF_HUBS/Nifti/derivatives/TaskStats_CIFTI_23.2.0/sub-HUBS03/task_glm_outputs/epiproj/stats/sub-HUBS03_ses-6_task-epiproj_zstats.nii
+done fake nifti to cifti
+done fake nifti to cifti
