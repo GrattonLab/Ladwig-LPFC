@@ -12,6 +12,8 @@ Split Half Reliability (Supplemental Figures 4,5)
 
 Task Responses (Figures 5-8, Supplemental Figures S14, S17) 
 
+Border Activations (Figure 8)
+
 
 
 
