@@ -4,7 +4,7 @@ Data: Data from 10 highly sampled individuals will be made publicly available at
 
 Scripts: All analyses can be replicated using the scripts below, which are organized by topic. 
 
-Network Composition (Figure 1, Supplemental Figures S6
+Network Composition (Figure 1, Supplemental Figures S6)
 
 Border Density (Figure 2,4 Supplemental Figures S8-S10) 
 
