@@ -6,7 +6,7 @@
 
 **Rotation analysis of rostral CO region network density**
 1. The rostral CO region was defined by identifying all contiguous CO clusters in the LPFC and then manually selecting the rostral one (make_rostral_pfc_mask.m).
-2. Rostral CO regions were rotated 10k times to generate a null model to compare network density (generate_cifti_rotations.m).
+2. Rostral CO regions were rotated 10k times to generate a null model to compare network density (generate_cifti_rotations.m, kickoff_rotations.sh).
 3. The average association network density of the real location versus comparable spins was plotted (network_density_rotation_test.m).
 
 **BOLD signal versus network density**
