@@ -1,9 +1,8 @@
-README.txt 
 
 Surface Processing (already done)
 ----------------------------------------
 1. generate task datalist for subject (/GrattonLab-General-Repo/SurfacePipeline/gen_datalist.sh, extend_datalist.m)
-2. put tasks on the surface (post_fc_processing_batch_GrattonLab_HUBS_task.m)
+2. Run tasks on the surface (post_fc_processing_batch_GrattonLab_HUBS_task.m)
 
 
 Task Analysis 
@@ -13,6 +12,7 @@ Task Analysis
 2. kickoff_all_task_steps.sh  
 - runs the GLM on a per run basis 
 - outputs a dtseries per run, including all contrasts 
+- calls upon task_proc.sh, task_script*.sh 
  
 3. combine runs.m
 - selects only the contrasts we care about and creates a dtseries per task per subject (including all runs) 
