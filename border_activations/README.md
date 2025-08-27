@@ -1,0 +1,2 @@
+1. The minimum distance from every cortical vertex to each large-scale functional network was calculated for each individual (make_distance_to_networks.m). The template Conte32k distance matrix was used. 
+2. The average distance from high activation and low-activation vertices within control networks (DAN, FP, CO) either of the other two control networks was calculated and plotted (border_activations.m).
